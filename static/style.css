@@ -1,0 +1,106 @@
+
+html {
+    font-family: "Times New Roman", Times, serif;
+  }
+
+head, body {
+    background-color: lightcyan;
+    align-content: center;
+    margin-top: 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.heading {
+    margin: 10px;
+    text-align: center;
+}
+.info {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.form {
+    margin: 10px;
+    align-content: center;
+    text-align: center;
+}
+
+.table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.9em;
+    width: 60%;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    font-family: sans-serif;
+}
+
+
+.table__header {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.table th,
+.table td {
+    padding: 12px 15px;
+}
+
+.table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+
+button.button-submit {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+  }
+.button-submit {
+    margin: 10px;
+    background: #1abc9c;
+    border-bottom: #16a085 3px solid;
+    border-left: #16a085 1px solid;
+    border-right: #16a085 1px solid;
+    border-radius: 6px;
+    text-align: center;
+    color: white;
+    padding: 10px;
+    float: left;
+    font-size: 12px;
+    font-weight: 800;
+    cursor:pointer;
+  }
+  
+.button-submit:hover {
+    opacity: 0.8; 
+  }
+  
+.button-submit:active {
+    background: #18B495;
+    border-bottom: #16a085 1px solid;
+    border-left: #16a085 1px solid;
+    border-right: #16a085 1px solid;
+    border-radius: 6px;
+    text-align: center;
+    color: white;
+    padding: 8px;
+    margin: 10px;
+    float: left;
+  }
+
+  

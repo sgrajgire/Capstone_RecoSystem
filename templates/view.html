@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>Capstone</title>
+        <link rel='stylesheet' type="text/css" href="/static/style.css"/>
+        <style>
+            input[type=button],
+            input[type=submit] {
+              background-color: #009879;
+              border: none;
+              color: #fff;
+              padding: 5px 10px;
+              text-decoration: none;
+              cursor: pointer;
+            }
+          </style>
+    </head>
+    <body>
+        <div class="heading">
+            <h1>Welcome to Sentiment based Recommendation System</h1>
+        </div>
+        <div  class="form" >
+            <form method="POST">
+                <p><label>User Name: </label>
+                <input type="text" id="uname" name="uname">
+                <input class=".submit-btn" type="submit" name="submit" value="Get Recommendation"/></p>
+            </form>
+        </div>
+        <div class="info">
+            <h3>{{info}}</h3>
+        </div>
+        <table class="table">
+            <tr class="table__header">
+                {% for header in headings %}
+                    <th class="table__cell">{{header}}</th>
+                {% endfor %}
+            </tr>
+            {% for row in data %}
+            <tr class="table__row">
+                {% for cell in row %}
+                    <td class="table__cell">{{cell}}</td>
+                {% endfor %}
+            </tr>
+            {% endfor %}            
+        </table>
+    </body>
+</html>
