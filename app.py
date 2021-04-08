@@ -13,19 +13,26 @@ def predict_recommendation():
     if request.method == 'POST':
         username = request.form['uname']
         out_data = [[]]
+
+        # check for empty user name
         if len(username) == 0:
             infotext = "Please enter valid user name!!"
             return render_template('view.html', info=infotext, data=out_data, headings=['Index','Product'])
         
         # load all input files
+        user_reco_file = open('./data/user_recommendation.pkl', 'rb')
+        user_reco_matrix = pickle.load(user_reco_file)
+        
+        # check for valid username
+        if username not in user_reco_matrix.index:
+            infotext = "Entered user name is not present. Please enter valid user name!!"
+            return render_template('view.html', info=infotext, data=out_data, headings=['Index','Product'])
+
         review_df = pd.read_csv('./data/product_review.csv')
         sentiment_df = pd.read_csv('./data/sentiment_df.csv')
 
         sentiment_model_file = open('./data/Sentiment_model.pkl', 'rb')
         sentiment_model = pickle.load(sentiment_model_file)
-
-        user_reco_file = open('./data/user_recommendation.pkl', 'rb')
-        user_reco_matrix = pickle.load(user_reco_file)
 
         tfidf_file = open('./data/tfidf_vectorizer.pkl', 'rb')
         tfidf_vector = pickle.load(tfidf_file)
